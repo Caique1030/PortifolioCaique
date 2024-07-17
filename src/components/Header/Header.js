@@ -17,22 +17,22 @@ const Header = () =>  (
     <Div2>
       <li>
         <Link legacyBehavior href="#projects">
-            Projetos  Front-end
+          Front-end projects
         </Link>
       </li>
       <li>
-        <Link legacyBehavior href="#projectsbe">
-            Projetos Back-end
+        <Link legacyBehavior href="#projectsbe"> 
+              Back-end projects
         </Link>
       </li>
       <li>
         <Link legacyBehavior href="#tech">
-            Tecnologias
+              Technologies
         </Link>
       </li>
       <li>
         <Link legacyBehavior href="#about">
-            Sobre mim
+              About me
         </Link>
       </li>
     </Div2>

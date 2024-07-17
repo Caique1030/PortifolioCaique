@@ -8,11 +8,11 @@ const Hero = (props) => (
   <Section row nopadding>
     <LeftSection>
       <SectionTitle main center>
-        Oi, meu nome é Caique! <br/>
-        bem vindo ao meu portfólio pessoal.
+      Hi, my name is Caique! <br/>
+      welcome to my personal portfolio
       </SectionTitle>
       <SectionText>
-        Veja abaixo, meus projetos, conhecimentos, um pouco sobre a minha tragetória e meus contatos.
+      See below, my projects, knowledge, a little about my background and my contacts.
       </SectionText>
       <Button onClick={() => window.location = 'https://github.com/Caique1030'}>Veja mais</Button>
     </LeftSection>

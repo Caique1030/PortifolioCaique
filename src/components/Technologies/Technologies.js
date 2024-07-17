@@ -22,10 +22,7 @@ const Technologies = () =>  (
             HMTL5<br/>
             JavaScript <br/>
             React.js <br/>
-            Redux <br/>
-            Context API <br/>
             Bootstrap <br/>
-            Bulma <br/>
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -38,7 +35,7 @@ const Technologies = () =>  (
           <ListParagraph>
             Java <br/>
             C# <br/>
-            Conhecimento em Node e Banco de Dados <br/>
+            Asp.netCore<br/>
             JavaScript <br />
             Node.js <br/>
             Express <br/>

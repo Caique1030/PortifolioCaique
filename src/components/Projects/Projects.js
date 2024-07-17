@@ -32,7 +32,7 @@ const Projects = () => {
     <div>
       <Section nopadding id="projects">
         <SectionDivider />
-        <SectionTitle main>Projetos Front-end</SectionTitle>
+        <SectionTitle main>Front-end projects</SectionTitle>
         <GridContainer>
           {projects.map(
             ({ id, image, title, description, tags, source, visit, type }) => (
@@ -52,8 +52,8 @@ const Projects = () => {
                   </TagList>
                 </div>
                 <UtilityList>
-                  <ExternalLinks href={visit} target="_blank">Visite</ExternalLinks>
-                  <ExternalLinks href={source} target="_blank">Código</ExternalLinks>
+                  <ExternalLinks href={visit} target="_blank">Visit</ExternalLinks>
+                  <ExternalLinks href={source} target="_blank">Code</ExternalLinks>
                 </UtilityList>
               </BlogCard>
             )
@@ -62,12 +62,12 @@ const Projects = () => {
         <SectionDivider />
       </Section>
       <Section nopadding id="projectsbe">
-        <SectionTitle main>Projetos Back-end</SectionTitle>
+        <SectionTitle main>Back-end projects</SectionTitle>
       </Section>
       <Dropdown style={{ marginLeft: '120px' }}>
         <Button style={{width: '500px', height: '50px', fontSize: '20px'}} dropdownToggle onClick={() => setHidden(!hidden)}>
           {' '}
-          Links dos repositórios projetos de Back-end
+          Back-end project repository links
         </Button>
         <DropdownMenu
           style={{fontSize: '20px'}}
@@ -76,75 +76,62 @@ const Projects = () => {
           toggle={() => setHidden(!hidden)}
         >
           <a
-            href="https://github.com/rafaelromanoz/talker-manager-api-node"
+            href="https://github.com/Caique1030/streaming"
             target="_blank"
           >
-            <DropdownItem>Talker Manager API (Node-Express)</DropdownItem>
+            <DropdownItem>streaming (JAVA)</DropdownItem>
           </a>
           <DropdownDivider />
           <a
-            href="https://github.com/rafaelromanoz/mysql-normalization"
+            href="https://github.com/Caique1030/Crud-com-Spring-Security"
             target="_blank"
           >
-            <DropdownItem>MySQL-Normalizations (MySQL)</DropdownItem>
+            <DropdownItem>Crud with Spring Security (Google SingIN)</DropdownItem>
           </a>
           <DropdownDivider />
           <a
-            href="https://github.com/rafaelromanoz/vocabulary-booster-mysql-project"
+            href="https://github.com/Caique1030/Portifolio-simples"
             target="_blank"
           >
-            <DropdownItem>MySQL Vocabulary Booster(MySQL)</DropdownItem>
+            <DropdownItem>Portfolio with HTML5</DropdownItem>
           </a>
           <DropdownDivider />
           <a
-            href="https://github.com/rafaelromanoz/mongodb-aggregations-project"
+            href="https://github.com/Caique1030/UsuarioController"
             target="_blank"
           >
-            <DropdownItem>MongoDB Aggregations(MongoDB)</DropdownItem>
+            <DropdownItem>Project in (VB.net) User Control</DropdownItem>
           </a>
           <DropdownDivider />
           <a
-            href="https://github.com/rafaelromanoz/mongodb-commerce-project"
+            href="https://github.com/Caique1030/Gestor-de-tarefas"
             target="_blank"
           >
-            <DropdownItem>MongoDB Commerce (MongoDB)</DropdownItem>
+            <DropdownItem>Task Manager (JAVA)</DropdownItem>
           </a>
           <DropdownDivider />
           
           <a
-            href="https://github.com/rafaelromanoz/docker-todo-project"
+            href="https://github.com/Caique1030/Asp.NetMVC-CRUD"
             target="_blank"
           >
-            <DropdownItem>Docker TODO-List(Docker)</DropdownItem>
+            <DropdownItem>Asp.NetMVC-CRUD (VB.net)</DropdownItem>
           </a>
           <DropdownDivider/>
           <a
-            href="https://github.com/rafaelromanoz/react-testing-library-project"
+            href="https://github.com/Caique1030/UsuarioApi"
             target="_blank"
           >
-            <DropdownItem>React Testing Library (RTL)</DropdownItem>
+            <DropdownItem>Api User (Asp.netCore)</DropdownItem>
           </a>
           <DropdownDivider/>
           <a
-            href="https://github.com/rafaelromanoz/jest-tests"
+            href="https://github.com/Caique1030/FilmesApi"
             target="_blank"
           >
-            <DropdownItem>Jest Tests (Jest, Mocks)</DropdownItem>
+            <DropdownItem>API for Listing Fikmes (C#) </DropdownItem>
           </a>
           <DropdownDivider />
-        <a
-            href="https://github.com/rafaelromanoz/sale_system_backend"
-            target="_blank"
-          >
-            <DropdownItem>Sale System API(Back-end)</DropdownItem>
-          </a>
-          <DropdownDivider />
-          <a
-            href="https://github.com/rafaelromanoz/store-manager-api"
-            target="_blank"
-          >
-            <DropdownItem>Store Manager(API)</DropdownItem>
-          </a>
         </DropdownMenu>
       </Dropdown>
     </div>

@@ -19,7 +19,7 @@ const Footer = () => {
     <FooterWrapper>
       <LinkList>
         <LinkColumn>
-          <LinkTitle>Contato</LinkTitle>
+          <LinkTitle>Contact</LinkTitle>
           <LinkItem href="tel:(35)99132-6253">(35)99132-6253</LinkItem>
         </LinkColumn>
         <LinkColumn>
@@ -31,7 +31,7 @@ const Footer = () => {
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>"Sabendo que a prova da vossa fé produz a paciência. Tiago 1:3"</Slogan>
+          <Slogan>"Knowing that the test of your faith produces patience. James 1:3"</Slogan>
         </CompanyContainer>
         <SocialContainer>
         <SocialIcons href="https://github.com/Caique1030">

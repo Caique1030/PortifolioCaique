@@ -66,9 +66,9 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: 2014, text: 'Faculdade de Sistemas de Informação', },
-  { year: 2015, text: 'Estágio Prefeitura Municipal de Passos (Central de Processamento de Dados)', },
-  { year: 2016, text: 'Votorantim Cimentos - Técnico de Informática', },
-  { year: 2020, text: 'Justiça Federal - Técnico de Informática', },
-  { year: 2021, text: 'Em março, caminhando para outro ramo do TI que sinto muito prazer em estudar e fazer que é a programação. Cursando Desenvolvimento Web na Trybe ', },
+  { year: 2019, text: 'Faculdade Federal Do Sul de Minas - IFSUL , Cursando Ciencias Da Computação ', },
+  { year: 2020, text: 'Facaculdade Estadual De Minas Gerais - UEMG, Cursando Atualmente Sistemas Da Informação', },
+  { year: 2020, text: 'NetSpeed Internet - Suporte Tecnico a rede de Fibra Otica', },
+  { year: 2022, text: 'Vivver Sistemas -Analista De Desenvolvimento', },
+  { year: 2024, text: 'Atalmente Estagiando na empresa Manga Tecnologia como Desenvolvedor FullStack em vb.net , xamarin e JavaScript ', },
 ];

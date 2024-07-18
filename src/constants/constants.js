@@ -33,7 +33,7 @@ export const projects = [
       image: '/images/pixart.gif',
       tags: ['JavaScript', 'HTML', 'CSS3','DOM'],
     source: 'https://github.com/Caique1030/PixelArt',
-    visit: 'pixel-rb0p5stdq-caique-junior-da-silvas-projects.vercel.app',
+    visit: 'https://pixel-art-seven.vercel.app/',
     id: 4
   },
   // {

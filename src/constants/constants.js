@@ -18,15 +18,15 @@ export const projects = [
   //   visit: 'https://rafaelromanoz.github.io/trivia-react-redux/',
   //   id: 2
   // }, 
-  // {
-  //   title: 'App de Receitas',
-  //   description: "O projeto é um App de Receita Web , onde são consultadas 12 endpoints em APIs, no app é possível pesquisar receitas de comidas e bebidas por nome, categoria, tipo, favoritar, marcar ingredientes, exibir detalhes, entre outras funcionalidades. Tecnologias usadas : React, React-Redux, Rect-Router, Git/Github flow, Lint entre outras tecnologias. Praticamos bastante soft skills como empatia, assertividade, comunicação, trabalho em grupo.",
-  //     image: '/images/appreceitasref.gif',
-  //     tags: ['React', 'Redux', 'CSS3', 'HTML5'],
-  //   source: 'https://github.com/rafaelromanoz/recipes-app-react',
-  //   visit: 'https://rafaelromanoz.github.io/recipes-app-react/',
-  //   id: 3
-  // },
+  {
+     title: 'ScreenMatch',
+     description: "Um Projeto para Consumir Api no Back End para o Front , com Api da OpenAi GPT ",
+       image: '/images/videos.gif',
+       tags: ['React', 'Redux', 'CSS3', 'HTML5'],
+      source: 'https://github.com/Caique1030/VideoScreen',
+      visit: 'https://github.com/Caique1030/VideoScreen',
+      id: 3
+   },
   {
     title: 'Pixel Picture',
     description: "Um projeto muito divertido de se fazer, criando uma paleta de cores manipulando o DOM em JavaScript, HTML, CSS.",

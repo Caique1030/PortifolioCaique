@@ -22,7 +22,7 @@ export const projects = [
      title: 'ScreenMatch',
      description: "Um Projeto para Consumir Api no Back End para o Front , com Api da OpenAi GPT ",
        image: '/images/videos.gif',
-       tags: ['React', 'Redux', 'CSS3', 'HTML5'],
+       tags: ['Java', 'SpringBoot', 'CSS3', 'HTML5','PostGree','Hibertnet','JPA'],
       source: 'https://github.com/Caique1030/VideoScreen',
       visit: 'https://github.com/Caique1030/VideoScreen',
       id: 3

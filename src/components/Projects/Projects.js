@@ -124,6 +124,18 @@ const Projects = () => {
           >
             <DropdownItem>Api User (Asp.netCore)</DropdownItem>
           </a>
+          <a
+            href="https://github.com/Caique1030/Frases-De-Filme-Back-End"
+            target="_blank"
+          >
+            <DropdownItem>Frases Back End (Java SpringBoot)</DropdownItem>
+          </a>
+          <a
+            href="https://github.com/Caique1030/VideoScreen"
+            target="_blank"
+          >
+            <DropdownItem>Filmes Back End (Java SpringBoot)</DropdownItem>
+          </a>
           <DropdownDivider/>
           <a
             href="https://github.com/Caique1030/FilmesApi"

@@ -9,20 +9,20 @@ export const projects = [
   //   visit: 'https://rafaelromanoz.github.io/trybewallet-hooks-typescript/',
   //   id: 1
   // },
-  // {
-  //   title: 'Trivia Game',
-  //   description: "O projeto Trivia, é um jogo de perguntas e respostas (tipo um show do milhão) onde é consumida a API do Jogo Trivia, cada pergunta tem o tempo de 30 segundos para ser respondida, é possível consultar ranking, verificar qual a resposta certa ou errada, projeto feito em grupo, onde foi possível treinar muita assertividade, empatia e cooperação.",
-  //     image: '/images/trivia.gif',
-  //     tags: ['React', 'Redux', 'CSS3','HTML5'],
-  //   source: 'https://github.com/rafaelromanoz/trivia-react-redux',
-  //   visit: 'https://rafaelromanoz.github.io/trivia-react-redux/',
-  //   id: 2
-  // }, 
+   {
+     title: 'Frases Filmes',
+     description: "O projeto Frases e um front end que consome uma Api em Java no back end ",
+       image: '/images/frases.gif',
+       tags: ['Java', 'SpringBoot', 'CSS3','HTML5'],
+    source: 'https://github.com/Caique1030/Front-Videos',
+     visit: 'https://github.com/Caique1030/Front-Videos',
+     id: 2
+   }, 
   {
      title: 'ScreenMatch',
      description: "Um Projeto para Consumir Api no Back End para o Front , com Api da OpenAi GPT ",
        image: '/images/videos.gif',
-       tags: ['Java', 'SpringBoot', 'CSS3', 'HTML5','PostGree','Hibertnet','JPA'],
+       tags: ['Java', 'SpringBoot','HTML5','PostGree'],
       source: 'https://github.com/Caique1030/VideoScreen',
       visit: 'https://github.com/Caique1030/VideoScreen',
       id: 3

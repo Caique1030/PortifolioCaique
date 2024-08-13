@@ -13,7 +13,7 @@ export const projects = [
      title: 'Frases Filmes',
      description: "O projeto Frases e um front end que consome uma Api em Java no back end ",
        image: '/images/frases.gif',
-       tags: ['Java', 'SpringBoot', 'CSS3','HTML5'],
+       tags: ['Java', ' SpringBoot ', ' CSS3 ',' HTML5 '],
     source: 'https://github.com/Caique1030/Front-Videos',
      visit: 'https://github.com/Caique1030/Front-Videos',
      id: 2
@@ -22,7 +22,7 @@ export const projects = [
      title: 'ScreenMatch',
      description: "Um Projeto para Consumir Api no Back End para o Front , com Api da OpenAi GPT ",
        image: '/images/videos.gif',
-       tags: ['Java', 'SpringBoot','HTML5','PostGree'],
+       tags: ['Java ', ' SpringBoot ',' HTML5 ',' PostGree '],
       source: 'https://github.com/Caique1030/VideoScreen',
       visit: 'https://github.com/Caique1030/VideoScreen',
       id: 3

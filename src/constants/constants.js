@@ -36,15 +36,15 @@ export const projects = [
     visit: 'https://pixel-art-seven.vercel.app/',
     id: 4
   },
-  // {
-  //   title: 'Star Wars Search Planet',
-  //   description: "O projeto Star Wars Planet foi desenvolvido utilizando uma API de dados do Star Wars, junto com React e Context API, nesse app pode se filtrar por nome e outras características dos planetas de Star Wars.",
-  //     image: '/images/sw.gif',
-  //     tags: ['React', 'Context API', 'CSS3','HTML5', 'Material UI'],
-  //   source: 'https://github.com/rafaelromanoz/starwars-planet-react',
-  //   visit: 'https://starwars-planet-react.vercel.app/',
-  //   id: 5
-  // },
+  {
+    title: 'APIREstFULL de Clinica Medica',
+     description: "Voll.med é uma clínica médica fictícia que precisa de um aplicativo para gestão de consultas. O aplicativo possui funcionalidades que permitam o cadastro de médicos e de pacientes, e também o agendamento e cancelamento de consultas.",
+       image: '/images/apiClinica.gif',
+       tags: ['Java', 'JUnit', 'Spring','JPA', 'Hibertnet','PostGreSQL'],
+     source: 'https://github.com/Caique1030/Api-Clinica-Medica',
+     visit: 'https://github.com/Caique1030/Api-Clinica-Medica',
+     id: 5
+   },
   // {
   //   title: 'Movie Card Stateful',
   //   description: "Projeto feito em React, CSS, para aperfeiçoar os aprendizados sobre componentes controlados, usando Cards.",

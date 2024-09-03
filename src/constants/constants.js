@@ -1,14 +1,5 @@
 export const projects = [
-  // {
-  //   type: 'front',
-  //   title: 'Trybe Wallet TypeScript',
-  //   description:"O projeto foi criado no intuito de itensificar os estudos de front-end utilizando React, Redux, EsLint para qualidade do código apresentado utilizando o padrão Airnb, esse projeto possui uma tela de login e após entrar no app é possível cadastrar atividades e fazer cotações das moedas em tempo real utilizando a api.",
-  //   image: '/images/ezgif.com-gif-maker (1).gif',
-  //   tags: ['React', 'Redux', 'TypeScript', 'HTML5', 'Bootstrap'],
-  //   source: 'https://github.com/rafaelromanoz/trybewallet-hooks-typescript',
-  //   visit: 'https://rafaelromanoz.github.io/trybewallet-hooks-typescript/',
-  //   id: 1
-  // },
+ 
    {
      title: 'Frases Filmes',
      description: "O projeto Frases e um front end que consome uma Api em Java no back end ",
@@ -16,7 +7,7 @@ export const projects = [
        tags: ['Java', ' SpringBoot ', ' CSS3 ',' HTML5 '],
     source: 'https://github.com/Caique1030/Front-Videos',
      visit: 'https://github.com/Caique1030/Front-Videos',
-     id: 2
+     id: 1
    }, 
   {
      title: 'ScreenMatch',
@@ -25,7 +16,7 @@ export const projects = [
        tags: ['Java ', ' SpringBoot ',' HTML5 ',' PostGree '],
       source: 'https://github.com/Caique1030/VideoScreen',
       visit: 'https://github.com/Caique1030/VideoScreen',
-      id: 3
+      id: 2
    },
   {
     title: 'Pixel Picture',
@@ -34,35 +25,18 @@ export const projects = [
       tags: ['JavaScript', 'HTML', 'CSS3','DOM'],
     source: 'https://github.com/Caique1030/PixelArt',
     visit: 'https://pixel-art-seven.vercel.app/',
-    id: 4
+    id: 3
   },
   {
-    title: 'APIREstFULL de Clinica Medica',
+    title: 'APi REstFull de Clinica Medica',
      description: "Voll.med é uma clínica médica fictícia que precisa de um aplicativo para gestão de consultas. O aplicativo possui funcionalidades que permitam o cadastro de médicos e de pacientes, e também o agendamento e cancelamento de consultas.",
        image: '/images/apiClinica.gif',
        tags: ['Java', 'JUnit', 'Spring','JPA', 'Hibertnet','PostGreSQL'],
      source: 'https://github.com/Caique1030/Api-Clinica-Medica',
      visit: 'https://github.com/Caique1030/Api-Clinica-Medica',
-     id: 5
+     id: 4
    },
-  // {
-  //   title: 'Movie Card Stateful',
-  //   description: "Projeto feito em React, CSS, para aperfeiçoar os aprendizados sobre componentes controlados, usando Cards.",
-  //     image: '/images/mcs.gif',
-  //     tags: ['React', 'CSS3','HTML5'],
-  //   source: 'https://github.com/rafaelromanoz/movie-cards-libraryStateful-react',
-  //   visit: 'https://movie-cards-library-stateful-react.vercel.app/',
-  //   id: 6
-  // },
-  // {
-  //   title: 'Frontend Online Store',
-  //   description: "Projeto feito em grupo, para reforçar conceitos de React, assincronismo, metodologias ágeis como Kanban, Scrum, para organização do trabalho foi utilizado a ferramenta Trello, para desenvolvimento do APP foi utilizado a API gratuita do Mercado Livre, podendo pesquisar, adicionar itens no carrinho realizando a soma de cada item.",
-  //     image: '/images/sc.gif',
-  //     tags: ['React', 'CSS3','HTML5', 'Kanban', 'Scrum'],
-  //   source: 'https://github.com/rafaelromanoz/online-frontend-store-react',
-  //   visit: 'https://online-frontend-store-react-7nw7rk82g-rafaelromanoz.vercel.app/',
-  //   id: 7
-  // }
+
 ];
 
 export const TimeLineData = [

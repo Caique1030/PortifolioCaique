@@ -1,22 +1,42 @@
 export default {
-  // Temp fonts
   fonts: {
-    title: "Space Grotesk, sans-serif",
-    main: "Space Grotesk, sans-serif"
+    title: "'Syne', sans-serif",
+    main: "'Plus Jakarta Sans', sans-serif",
+    mono: "'Fira Code', monospace",
   },
-  // Colors for layout
   colors: {
-    primary1: "hsl(204,23.8%,95.9%)",
-    background1: "#0F1624",
-    accent1: "hsl(34.9,98.6%,72.9%)",
-    button: "hsl(205.1,100%,36.1%)",
-    background2: "hsl(232.7,27.3%,23.7%)",
+    // Backgrounds
+    background1: "#F8F6F1",
+    background2: "#FFFFFF",
+    surface: "#EFEDE7",
+    elevated: "#E8E5DD",
+
+    // Text
+    primary1: "#111111",
+    textSecondary: "#6B7280",
+    textMuted: "#9CA3AF",
+
+    // Accent
+    accent1: "#4F46E5",         // vibrant indigo
+    accent2: "#818CF8",         // soft indigo
+    accentBg: "#EEF2FF",        // indigo tint
+    accentDark: "#3730A3",      // deep indigo hover
+
+    // Status
+    green: "#059669",
+    greenBg: "#ECFDF5",
+
+    // Borders
+    border: "#E4E1D9",
+    borderStrong: "#C8C4BA",
+
+    // Legacy compat
+    button: "#4F46E5",
   },
-  // Breakpoints for responsive design
   breakpoints: {
     sm: 'screen and (max-width: 640px)',
     md: 'screen and (max-width: 768px)',
     lg: 'screen and (max-width: 1024px)',
-    xl: 'screen and (max-width: 1280px)'
+    xl: 'screen and (max-width: 1280px)',
   },
 }

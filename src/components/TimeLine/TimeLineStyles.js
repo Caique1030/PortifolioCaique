@@ -1,154 +1,252 @@
 
 import styled from 'styled-components'
 
-export const CarouselContainer = styled.ul`
-  max-width: 1040px;
-  background: #0F1624;
-  padding: 0rem;
-  list-style:none;
-  display: flex;
-  justify-content: space-between; 
-  /* overflow-x: hidden; */
+export const TimelineWrapper = styled.div`
+  position: relative;
+  padding-left: 2.8rem;
+  margin-bottom: 4rem;
 
-  margin-left: 32px;
-  &:first-of-type{
-    margin-left: 0px;
-  }
-
-  margin-bottom: 80px;
-
-  //remove scrollbar
-  scrollbar-width: none;  
-   &::-webkit-scrollbar {
-     display: none;
-   }
-
-  @media ${props => props.theme.breakpoints.sm} {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    touch-action: pan-x;
-    justify-content: initial;
-    margin-bottom: 8px;
-  }
-`
-export const CarouselMobileScrollNode = styled.div`
-  @media ${props => props.theme.breakpoints.sm} {
-    display: flex;
-    min-width: ${({ final }) => final ? `120%;` : `min-content`}
+  @media ${p => p.theme.breakpoints.sm} {
+    padding-left: 2rem;
   }
 `
 
-export const CarouselItem = styled.div`
-  background: #0F1624;
-  border-radius: 3px;
-  max-width: 196px;
-
-  @media ${props => props.theme.breakpoints.md} {
-    max-width: 124px;
-  }
-  
-  @media ${props => props.theme.breakpoints.sm} {
-    margin-left: 32px;
-    min-width: 120px;
-    background: #0E131F;
-    padding: 4px;
-    align-content: start;
-    scroll-snap-align: start;
-    border-radius: 3px;
-    overflow: visible;
-    position: relative;
-    height: fit-content;
-    
-    ${(props) => props.active === props.index ? `opacity: 1` : `opacity: 0.5`}; 
-  }
+export const TimelineLine = styled.div`
+  position: absolute;
+  left: 7px;
+  top: 12px;
+  bottom: 20px;
+  width: 1.5px;
+  background: linear-gradient(to bottom, #4F46E5, rgba(79, 70, 229, 0.1));
 `
 
-export const CarouselItemTitle = styled.h4`
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: 0.02em;
-  display: flex;
-  /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
-  background: linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 8px;
-
-  @media ${props => props.theme.breakpoints.md} {
-    font-size: 20px;
-    line-height: 28px;
-    margin-bottom: 4px;
-  }
-  
-  @media ${props => props.theme.breakpoints.sm} {
-    font-size: 16px;
-    line-height: 24px;
-  }
-`
-export const CarouselItemImg = styled.svg`
-  margin-left: 21px;
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
-  width: 100%;
-
-  @media ${props => props.theme.breakpoints.sm} {
-    -webkit-mask-image: none;
-    margin-left: 16px;
-    overflow: visible;
-  }
-`
-
-export const CarouselItemText = styled.p`
-  font-size: 14px;
-  line-height: 22px;
-  letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.75);
-  padding-right: 16px;
-
-  @media ${props => props.theme.breakpoints.md} {
-    font-size: 12px;
-    line-height: 18px;
-    padding-right: 32px;
-  }
-  @media ${props => props.theme.breakpoints.sm} {
-    font-size: 10px;
-    line-height: 16px;
-    padding-right: 0;
-  }
-`
-export const CarouselButtons = styled.div`
-  width: 288px;
-
-  display: none;
-  visibility: hidden;
-
-  @media ${props => props.theme.breakpoints.sm} {
-    display: flex;
-    visibility: visible;
-    margin-bottom: 48px;
-  }
-`
-
-export const CarouselButton = styled.button`
-  box-sizing: border-box;
-  background: none;
-  padding: 4px;
-  border: none;
+export const ExperienceItem = styled.div`
+  position: relative;
+  padding-bottom: 3.2rem;
   cursor: pointer;
-  margin-right: 4px;
-  opacity: ${(props) => props.active === props.index ? `1` : `.33`};
-  transform: ${(props) => props.active === props.index ? `scale(1.6)` : `scale(1)`};
 
-  &:focus {
-    outline: none;
+  .dot {
+    position: absolute;
+    left: -2.6rem;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4F46E5;
+    border: 2px solid #F8F6F1;
+    box-shadow: 0 0 0 2px #4F46E5;
+    transition: transform 0.2s ease;
+    z-index: 1;
+  }
+
+  &:hover .dot {
+    transform: scale(1.3);
+  }
+
+  .content {
+    background: #FFFFFF;
+    border: 1px solid #E4E1D9;
+    border-radius: 12px;
+    padding: 2rem 2.4rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      border-color: #C7C3F3;
+      box-shadow: 0 4px 20px rgba(79, 70, 229, 0.07);
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.6rem;
+    margin-bottom: 0.4rem;
+
+    @media ${p => p.theme.breakpoints.sm} {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
+
+  .title-group {
+    flex: 1;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    flex-shrink: 0;
+
+    @media ${p => p.theme.breakpoints.sm} {
+      align-items: flex-start;
+    }
+  }
+
+  .toggle-hint {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1rem;
+    color: #9CA3AF;
+    padding: 0;
+    margin-top: 1.2rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #4F46E5;
+    }
+
+    &:focus { outline: none; }
+  }
+
+  &:last-child {
+    padding-bottom: 0;
   }
 `
 
-export const CarouselButtonDot = styled.div`
-  background-color: white;
-  border-radius: 10px;
-  margin: auto;
-  width: 3px;
-  height: 3px;
+export const RoleTitle = styled.h3`
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #111111;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
 `
+
+export const CompanyName = styled.p`
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #4F46E5;
+`
+
+export const PeriodText = styled.span`
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  color: #9CA3AF;
+  white-space: nowrap;
+`
+
+export const CurrentBadge = styled.span`
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #059669;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-radius: 100px;
+  padding: 0.2rem 0.8rem;
+`
+
+export const ProjectBadge = styled.span`
+  display: inline-block;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  color: #7C3AED;
+  background: #F5F3FF;
+  border: 1px solid #DDD6FE;
+  border-radius: 4px;
+  padding: 0.2rem 0.8rem;
+`
+
+export const HighlightList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 1.2rem;
+`
+
+export const HighlightItem = styled.li`
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.65;
+  color: #6B7280;
+  padding: 0.4rem 0 0.4rem 1.6rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.9rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #4F46E5;
+    opacity: 0.5;
+  }
+`
+
+export const TechList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+`
+
+export const TechTag = styled.span`
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  color: #6B7280;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+`
+
+export const EducationCard = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #FFFFFF;
+  border: 1px solid #E4E1D9;
+  border-radius: 12px;
+  padding: 2.4rem;
+  margin-bottom: 4.8rem;
+  border-left: 3px solid #4F46E5;
+`
+
+export const EducationIcon = styled.div`
+  font-size: 2.8rem;
+  flex-shrink: 0;
+`
+
+export const EducationInfo = styled.div`
+  h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #111111;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.4rem;
+    color: #4F46E5;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  span {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    color: #9CA3AF;
+  }
+`
+
+// Legacy exports for compat
+export const CarouselContainer = styled.ul``
+export const CarouselMobileScrollNode = styled.div``
+export const CarouselItem = styled.div``
+export const CarouselItemTitle = styled.h4``
+export const CarouselItemImg = styled.svg``
+export const CarouselItemText = styled.p``
+export const CarouselButtons = styled.div``
+export const CarouselButton = styled.button``
+export const CarouselButtonDot = styled.div``

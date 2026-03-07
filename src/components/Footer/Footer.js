@@ -1,49 +1,48 @@
 import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { personalInfo } from '../../constants/constants';
 import { SocialIcons } from '../Header/HeaderStyles';
 import {
-  CompanyContainer,
+  FooterBottom,
   FooterWrapper,
-  LinkColumn,
-  LinkItem,
-  LinkList,
-  LinkTitle,
-  Slogan,
-  SocialContainer,
-  SocialIconsContainer,
+  ContactItem,
+  ContactList,
+  FooterQuote,
+  FooterSocials,
+  FooterTop,
 } from './FooterStyles';
 
-const Footer = () => {
-  return (
-    <FooterWrapper>
-      <LinkList>
-        <LinkColumn>
-          <LinkTitle>Contact</LinkTitle>
-          <LinkItem href="tel:(35)99132-6253">(35)99132-6253</LinkItem>
-        </LinkColumn>
-        <LinkColumn>
-          <LinkTitle>Email</LinkTitle>
-          <LinkItem href="kaikejrsilva55@gmail.com">
-            kaikejrsilva55@gmail.com
-          </LinkItem>
-        </LinkColumn>
-      </LinkList>
-      <SocialIconsContainer>
-        <CompanyContainer>
-          <Slogan>"Knowing that the test of your faith produces patience. James 1:3"</Slogan>
-        </CompanyContainer>
-        <SocialContainer>
-        <SocialIcons href="https://github.com/Caique1030">
-          <AiFillGithub size="3rem" />
+const Footer = () => (
+  <FooterWrapper>
+    <FooterTop>
+      <ContactList>
+        <ContactItem>
+          <span>Contato</span>
+          <a href={`tel:${personalInfo.contact.phone}`}>{personalInfo.contact.phone}</a>
+        </ContactItem>
+        <ContactItem>
+          <span>Email</span>
+          <a href={`mailto:${personalInfo.contact.email}`}>{personalInfo.contact.email}</a>
+        </ContactItem>
+      </ContactList>
+
+      <FooterSocials>
+        <SocialIcons href={personalInfo.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <AiFillGithub size="2.4rem" />
         </SocialIcons>
-        <SocialIcons href="https://www.linkedin.com/in/caique-junior-da-silva-369403126/">
-          <AiFillLinkedin size="3rem" />
+        <SocialIcons href={personalInfo.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <AiFillLinkedin size="2.4rem" />
         </SocialIcons>
-        </SocialContainer>
-      </SocialIconsContainer>
-    </FooterWrapper>
-  );
-};
+      </FooterSocials>
+    </FooterTop>
+
+    <FooterBottom>
+      <FooterQuote>
+        "Sabendo que a provação da vossa fé produz paciência." — Tiago 1:3
+      </FooterQuote>
+      <p>© {new Date().getFullYear()} Caique Junior Da Silva</p>
+    </FooterBottom>
+  </FooterWrapper>
+);
 
 export default Footer;

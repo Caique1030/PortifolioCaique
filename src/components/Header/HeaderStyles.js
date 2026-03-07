@@ -1,127 +1,138 @@
-import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 2rem;
-  padding: 1rem;
-  padding-top: 2rem;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 60px);
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
-  }
-`;
-export const Span = styled.span `
-  font-size: 2rem;
-`
-export const Div1 = styled.div`
-  grid-area: 1 / 1 / 2 / 2;
+export const Container = styled.header`
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 1 / 1 / 2 / 3;
-  }
-`;
-export const Div2 = styled.div`
-  grid-area: 1 / 2 / 2 / 4;
-  display: flex;
-  justify-content: space-around;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 2 / 2 / 3 / 5;
-  }
-`;
-export const Div3 = styled.div`
-  grid-area: 1 / 5 / 2 / 6;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    align-items: center;
-    grid-area: 1 / 4 / 2 / 6;
-  }
-`;
+  justify-content: space-between;
+  padding: 1.4rem 4.8rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: ${p => p.$scrolled
+    ? 'rgba(248, 246, 241, 0.92)'
+    : 'rgba(248, 246, 241, 0.98)'
+  };
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid ${p => p.$scrolled ? '#E4E1D9' : 'transparent'};
+  transition: border-color 0.3s ease, background 0.3s ease;
 
-// Navigation Links
-export const NavLink = styled.a`
-  font-size: 2rem;
-  line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
-  transition: 0.4s ease;
-  &:hover {
-    color: #fff;
-    opacity: 1;
-    cursor: pointer;
-  }
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.5rem;
-  }
-`;
-
-/// DropDown Contact
-export const ContactDropDown = styled.button`
-  border: none;
-  display: flex;
-  position: relative;
-  background: none;
-  font-size: 1.7rem;
-
-  line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
-  cursor: pointer;
-  transition: 0.3s ease;
-
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    color: #fff;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.4rem 0;
-  }
   @media ${(props) => props.theme.breakpoints.md} {
-    padding: 0;
-  }
-`;
-
-export const NavProductsIcon = styled(IoIosArrowDropdown)`
-  margin-left: 8px;
-  display: flex;
-  align-self: center;
-  transition: 0.3s ease;
-  opacity: ${({ isOpen }) => (isOpen ? '1' : '.75')};
-  transform: ${({ isOpen }) => (isOpen ? 'scaleY(-1)' : 'scaleY(1)')};
-
-  &:hover {
-    opacity: 1;
+    padding: 1.2rem 2.4rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 2px 0 0 2px;
-    width: 15px;
+    padding: 1rem 1.6rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
   }
 `;
 
+export const Logo = styled.span`
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #111111;
+  letter-spacing: -0.03em;
+  transition: color 0.2s ease;
 
-// Social Icons 
+  span {
+    color: #4F46E5;
+  }
+
+  &:hover {
+    color: #4F46E5;
+  }
+`;
+
+export const Div1 = styled.div`
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const Div2 = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  list-style: none;
+
+  li {
+    position: relative;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    gap: 2rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    gap: 1.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`;
+
+export const NavLink = styled.a`
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #6B7280;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 2px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: #4F46E5;
+    transition: width 0.25s ease;
+  }
+
+  &:hover {
+    color: #4F46E5;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 1.2rem;
+  }
+`;
+
+export const Div3 = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+`;
 
 export const SocialIcons = styled.a`
-transition: 0.3s ease;
-color: white;
-border-radius: 50px;
-  padding: 8px;
-&:hover {
-    background-color: #212d45;
-    transform: scale(1.2);
-    cursor: pointer;
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+  border-radius: 6px;
+  padding: 6px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #4F46E5;
+    background: rgba(79, 70, 229, 0.08);
   }
-`
+`;
+
+// Legacy exports for Footer compatibility
+export const Span = styled.span``;
+export const ContactDropDown = styled.button``;
+export const NavProductsIcon = styled.span``;

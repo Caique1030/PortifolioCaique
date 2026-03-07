@@ -1,50 +1,58 @@
 import Link from 'next/link';
-import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-import { DiCssdeck } from 'react-icons/di';
+import React, { useEffect, useState } from 'react';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { Container, Div1, Div2, Div3, Logo, NavLink, SocialIcons } from './HeaderStyles';
 
-import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span } from './HeaderStyles';
+const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
 
-const Header = () =>  (
-  <Container>
-    <Div1>
-      <Link legacyBehavior href="/">
-        <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20px'}}>
-          <DiCssdeck size="3rem"/> <Span>Portfolio</Span>
-        </a>
-      </Link>
-    </Div1>
-    <Div2>
-      <li>
-        <Link legacyBehavior href="#projects">
-          Front-end projects
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <Container $scrolled={scrolled}>
+      <Div1>
+        <Link legacyBehavior href="/">
+          <a>
+            <Logo>CJS<span>.</span></Logo>
+          </a>
         </Link>
-      </li>
-      <li>
-        <Link legacyBehavior href="#projectsbe"> 
-              Back-end projects
-        </Link>
-      </li>
-      <li>
-        <Link legacyBehavior href="#tech">
-              Technologies
-        </Link>
-      </li>
-      <li>
-        <Link legacyBehavior href="#about">
-              About me
-        </Link>
-      </li>
-    </Div2>
-    <Div3>
-      <SocialIcons legacyBehavior href='https://github.com/Caique1030'>
-        <AiFillGithub size="3rem"/>
-      </SocialIcons>
-      <SocialIcons legacyBehavior href='https://www.linkedin.com/in/caique-junior-da-silva-369403126/'>
-        <AiFillLinkedin size="3rem"/>
-      </SocialIcons>
-    </Div3>
-  </Container>
-);
+      </Div1>
+      <Div2>
+        <li>
+          <Link legacyBehavior href="#experience">
+            <NavLink>Experiência</NavLink>
+          </Link>
+        </li>
+        <li>
+          <Link legacyBehavior href="#projects">
+            <NavLink>Projetos</NavLink>
+          </Link>
+        </li>
+        <li>
+          <Link legacyBehavior href="#skills">
+            <NavLink>Habilidades</NavLink>
+          </Link>
+        </li>
+        <li>
+          <Link legacyBehavior href="#certifications">
+            <NavLink>Certificações</NavLink>
+          </Link>
+        </li>
+      </Div2>
+      <Div3>
+        <SocialIcons href="https://github.com/Caique1030" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <AiFillGithub size="2.2rem" />
+        </SocialIcons>
+        <SocialIcons href="https://www.linkedin.com/in/caiquejuniordasilva/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <AiFillLinkedin size="2.2rem" />
+        </SocialIcons>
+      </Div3>
+    </Container>
+  );
+};
 
 export default Header;

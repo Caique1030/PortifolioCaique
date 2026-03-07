@@ -1,152 +1,88 @@
 import React, { useState } from 'react';
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownDivider,
-} from 'styled-dropdown-component';
-import { Button } from 'styled-button-component';
-import {
-  BlogCard,
-  CardInfo,
-  ExternalLinks,
-  GridContainer,
-  HeaderThree,
-  Hr,
-  Tag,
-  TagList,
-  TitleContent,
-  UtilityList,
-  Img,
-} from './ProjectsStyles';
-import {
-  Section,
-  SectionDivider,
-  SectionTitle,
-} from '../../styles/GlobalComponents';
+import { AiOutlineCode, AiOutlineLink } from 'react-icons/ai';
 import { projects } from '../../constants/constants';
+import useInView from '../../hooks/useInView';
+import { Reveal, Section, SectionDivider, SectionLabel, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import {
+  CardFooter,
+  CardImage,
+  CardInfo,
+  CardTag,
+  CardTags,
+  CardTitle,
+  CardType,
+  FilterBar,
+  FilterBtn,
+  GridContainer,
+  ProjectCard,
+} from './ProjectsStyles';
 
 const Projects = () => {
-  const [hidden, setHidden] = useState(true);
+  const [filter, setFilter] = useState('all');
+  const [ref, inView] = useInView();
+
+  const filtered = filter === 'all'
+    ? projects
+    : projects.filter(p => p.type === filter);
+
   return (
-    <div>
-      <Section nopadding id="projects">
-        <SectionDivider />
-        <SectionTitle main>Front-end projects</SectionTitle>
-        <GridContainer>
-          {projects.map(
-            ({ id, image, title, description, tags, source, visit, type }) => (
-              <BlogCard key={id}>
-                <Img src={image}/>
-                <TitleContent>
-                  <HeaderThree title>{title}</HeaderThree>
-                  <Hr />
-                </TitleContent>
-                <CardInfo>{description}</CardInfo>
-                <div>
-                  <TitleContent>Stack</TitleContent>
-                  <TagList>
-                    {tags.map((tag, i) => (
-                      <Tag key={i}>{tag}</Tag>
+    <Section nopadding id="projects">
+      <SectionDivider />
+      <Reveal $inView={inView} ref={ref}>
+        <SectionLabel>Portfólio</SectionLabel>
+        <SectionTitle>Projetos</SectionTitle>
+        <SectionText>
+          Uma seleção de projetos profissionais e pessoais demonstrando expertise em full stack development.
+        </SectionText>
+      </Reveal>
+
+      <FilterBar>
+        {['all', 'professional', 'personal'].map(f => (
+          <FilterBtn
+            key={f}
+            $active={filter === f}
+            onClick={() => setFilter(f)}
+          >
+            {f === 'all' ? 'Todos' : f === 'professional' ? 'Profissional' : 'Pessoal'}
+          </FilterBtn>
+        ))}
+      </FilterBar>
+
+      <GridContainer>
+        {filtered.map((project, index) => {
+          const [cardRef, cardInView] = useInView();
+          return (
+            <Reveal key={project.id} ref={cardRef} $inView={cardInView} $delay={index * 80}>
+              <ProjectCard>
+                <CardImage src={project.image} alt={project.title} loading="lazy" />
+                <div style={{ padding: '2rem' }}>
+                  <CardType $professional={project.type === 'professional'}>
+                    {project.type === 'professional' ? 'Profissional' : 'Personal'}
+                  </CardType>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardInfo>{project.description}</CardInfo>
+                  <CardTags>
+                    {project.tags.map(tag => (
+                      <CardTag key={tag}>{tag}</CardTag>
                     ))}
-                  </TagList>
+                  </CardTags>
+                  <CardFooter>
+                    <a href={project.visit} target="_blank" rel="noopener noreferrer" aria-label="Visitar projeto">
+                      <AiOutlineLink size="1.8rem" />
+                      Demo
+                    </a>
+                    <a href={project.source} target="_blank" rel="noopener noreferrer" aria-label="Ver código">
+                      <AiOutlineCode size="1.8rem" />
+                      Código
+                    </a>
+                  </CardFooter>
                 </div>
-                <UtilityList>
-                  <ExternalLinks href={visit} target="_blank">Visit</ExternalLinks>
-                  <ExternalLinks href={source} target="_blank">Code</ExternalLinks>
-                </UtilityList>
-              </BlogCard>
-            )
-          )}
-        </GridContainer>
-        <SectionDivider />
-      </Section>
-      <Section nopadding id="projectsbe">
-        <SectionTitle main>Back-end projects</SectionTitle>
-      </Section>
-      <Dropdown style={{ marginLeft: '120px' }}>
-        <Button style={{width: '500px', height: '50px', fontSize: '20px'}} dropdownToggle onClick={() => setHidden(!hidden)}>
-          {' '}
-          Back-end project repository links
-        </Button>
-        <DropdownMenu
-          style={{fontSize: '20px'}}
-          hidden={hidden}
-          fullWidth={true}
-          toggle={() => setHidden(!hidden)}
-        >
-          <a
-            href="https://github.com/Caique1030/streaming"
-            target="_blank"
-          >
-            <DropdownItem>streaming (JAVA)</DropdownItem>
-          </a>
-          <DropdownDivider />
-          <a
-            href="https://github.com/Caique1030/Crud-com-Spring-Security"
-            target="_blank"
-          >
-            <DropdownItem>Crud with Spring Security (Google SingIN)</DropdownItem>
-          </a>
-          <DropdownDivider />
-          <a
-            href="https://github.com/Caique1030/Portifolio-simples"
-            target="_blank"
-          >
-            <DropdownItem>Portfolio with HTML5</DropdownItem>
-          </a>
-          <DropdownDivider />
-          <a
-            href="https://github.com/Caique1030/UsuarioController"
-            target="_blank"
-          >
-            <DropdownItem>Project in (VB.net) User Control</DropdownItem>
-          </a>
-          <DropdownDivider />
-          <a
-            href="https://github.com/Caique1030/Gestor-de-tarefas"
-            target="_blank"
-          >
-            <DropdownItem>Task Manager (JAVA)</DropdownItem>
-          </a>
-          <DropdownDivider />
-          
-          <a
-            href="https://github.com/Caique1030/Asp.NetMVC-CRUD"
-            target="_blank"
-          >
-            <DropdownItem>Asp.NetMVC-CRUD (VB.net)</DropdownItem>
-          </a>
-          <DropdownDivider/>
-          <a
-            href="https://github.com/Caique1030/UsuarioApi"
-            target="_blank"
-          >
-            <DropdownItem>Api User (Asp.netCore)</DropdownItem>
-          </a>
-          <a
-            href="https://github.com/Caique1030/Frases-De-Filme-Back-End"
-            target="_blank"
-          >
-            <DropdownItem>Frases Back End (Java SpringBoot)</DropdownItem>
-          </a>
-          <a
-            href="https://github.com/Caique1030/VideoScreen"
-            target="_blank"
-          >
-            <DropdownItem>Filmes Back End (Java SpringBoot)</DropdownItem>
-          </a>
-          <DropdownDivider/>
-          <a
-            href="https://github.com/Caique1030/FilmesApi"
-            target="_blank"
-          >
-            <DropdownItem>API for Listing Fikmes (C#) </DropdownItem>
-          </a>
-          <DropdownDivider />
-        </DropdownMenu>
-      </Dropdown>
-    </div>
+              </ProjectCard>
+            </Reveal>
+          );
+        })}
+      </GridContainer>
+    </Section>
   );
 };
 
